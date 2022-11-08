@@ -1,6 +1,7 @@
 package com.example.kotlinhappybirthday
 
 import android.os.Bundle
+import android.os.Message
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -34,10 +35,17 @@ fun Greeting(name: String) {
     Text(text = "Hello $name!")
 }
 
-@Preview(showBackground = false)
 @Composable
-fun DefaultPreview() {
+fun BirthdayGreetingWithText(message: String) {
+    Text(
+        text = message
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun BirthdayCardPreview() {
     KotlinHappyBirthdayTheme {
-        Greeting("James")
+        BirthdayGreetingWithText("HPD James")
     }
 }
