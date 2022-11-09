@@ -37,10 +37,15 @@ fun Greeting(name: String) {
 }
 
 @Composable
-fun BirthdayGreetingWithText(message: String) {
+fun BirthdayGreetingWithText(message: String, from: String) {
     Text(
         text = message,
         fontSize = 36.sp
+    )
+
+    Text(
+        text = from,
+        fontSize = 24.sp
     )
 }
 
@@ -48,6 +53,6 @@ fun BirthdayGreetingWithText(message: String) {
 @Composable
 fun BirthdayCardPreview() {
     KotlinHappyBirthdayTheme {
-        BirthdayGreetingWithText("HPD James")
+        BirthdayGreetingWithText("HPD James", "- from Emma")
     }
 }
