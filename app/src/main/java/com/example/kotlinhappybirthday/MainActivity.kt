@@ -11,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.example.kotlinhappybirthday.ui.theme.KotlinHappyBirthdayTheme
 
 class MainActivity : ComponentActivity() {
@@ -38,7 +39,8 @@ fun Greeting(name: String) {
 @Composable
 fun BirthdayGreetingWithText(message: String) {
     Text(
-        text = message
+        text = message,
+        fontSize = 36.sp
     )
 }
 
