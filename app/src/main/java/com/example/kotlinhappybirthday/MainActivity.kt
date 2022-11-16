@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.Message
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,6 +14,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.example.kotlinhappybirthday.ui.theme.KotlinHappyBirthdayTheme
@@ -57,12 +59,16 @@ fun BirthdayGreetingWithText(message: String, from: String) {
 
 @Composable
 fun BirthdayGreetingWithImage(message: String, from: String) {
+
     val image = painterResource(R.drawable.androidparty)
 
-    Image(
-        painter = image,
-        contentDescription = null
-    )
+    Box {
+        Image(
+            painter = image,
+            contentDescription = null
+        )
+        BirthdayGreetingWithText(message = message, from = from)
+    }
 }
 
 @Preview(showBackground = false)
