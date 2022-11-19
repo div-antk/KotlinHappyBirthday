@@ -13,6 +13,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.tooling.preview.Preview
@@ -68,7 +69,8 @@ fun BirthdayGreetingWithImage(message: String, from: String) {
             contentDescription = null,
             modifier = Modifier
                 .fillMaxHeight()
-                .fillMaxWidth()
+                .fillMaxWidth(),
+            contentScale = ContentScale.Crop
         )
         BirthdayGreetingWithText(message = message, from = from)
     }
