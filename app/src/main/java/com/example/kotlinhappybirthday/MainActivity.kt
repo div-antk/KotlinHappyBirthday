@@ -12,12 +12,14 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.dp
 import com.example.kotlinhappybirthday.ui.theme.KotlinHappyBirthdayTheme
 
 class MainActivity : ComponentActivity() {
@@ -49,7 +51,11 @@ fun BirthdayGreetingWithText(message: String, from: String) {
     Column {
         Text(
             text = message,
-            fontSize = 36.sp
+            fontSize = 36.sp,
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentWidth(Alignment.Start)
+                .padding(start = 16.dp, top = 16.dp)
         )
         Text(
             text = from,
